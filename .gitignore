@@ -5,3 +5,5 @@
 .vscode/*
 .sessions
 .DS_Store
+*.class
+*test
