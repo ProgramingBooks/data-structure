@@ -21,5 +21,5 @@ var_dump($arr);
 
 echo $arr->isExists(100);
 
-$arr->update(5, 900);
+$arr->set(5, 900);
 

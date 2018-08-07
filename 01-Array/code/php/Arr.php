@@ -114,20 +114,41 @@ class Arr {
     }
 
     /**
-     * 修改指的位置的元素
+     * 修改指定位置的元素
      * @param $index
      * @param string $val
      * @throws Exception
      */
-    public function update($index, $val = '') {
+    public function set($index, $val = '') {
         if ($index < 0 || $index > count($this->_data)) {
-            throw new Exception("Update failed, index require 0 ~ ".count($this->_data));
+            throw new Exception("Set failed, index require 0 ~ ".count($this->_data));
         }
         $this->_data[$index] = $val;
     }
 
+	/**
+	 * 修改指定位置的元素
+	 * @param $index
+	 * @return mixed
+	 * @throws Exception
+	 */
+	public function get($index) {
+		if ($index < 0 || $index > count($this->_data)) {
+			throw new Exception("Get failed, index require 0 ~ ".count($this->_data));
+		}
+		return $this->_data[$index];
+	}
+
+	/**
+	 * data
+	 * @return array
+	 */
+	public function data() {
+		return $this->_data;
+	}
+
     /**
-     * 删除指的位置的元素
+     * 删除指定位置的元素
      * @param $index
      * @throws Exception
      */
