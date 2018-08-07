@@ -15,5 +15,11 @@ echo $arr;
 
 $arr->addFirst(199);
 
+$arr->add(5, 100);
+
 var_dump($arr);
+
+echo $arr->isExists(100);
+
+$arr->update(5, 900);
 

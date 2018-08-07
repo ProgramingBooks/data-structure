@@ -89,7 +89,7 @@ class Arr {
      * @throws Exception
      */
     public function addLast($val = '') {
-        $this->add(count($this->_data) + 1, $val);
+        $this->add(count($this->_data), $val);
     }
 
     /**
@@ -137,7 +137,6 @@ class Arr {
         }
         unset($this->_data[$index]);
     }
-
 
     public function __toString() {
         return "Arr max size: ".$this->_maxSize.", Arr size: ".$this->size();
