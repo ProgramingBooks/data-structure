@@ -1,6 +1,6 @@
 <?php
 /**
- * 实现的动态数组
+ * 实现数组
  * @author: phachon
  */
 
@@ -148,6 +148,20 @@ class Arr {
 	}
 
     /**
+     * 查找元素的位置
+     * @param string $val
+     * @return int
+     */
+	public function find($val = '') {
+        foreach ($this->_data as $index => $item) {
+            if ($item == $val) {
+                return $index;
+            }
+        }
+        return -1;
+    }
+
+    /**
      * 删除指定位置的元素
      * @param $index
      * @throws Exception
@@ -159,6 +173,10 @@ class Arr {
         unset($this->_data[$index]);
     }
 
+    /**
+     * print to string
+     * @return string
+     */
     public function __toString() {
         return "Arr max size: ".$this->_maxSize.", Arr size: ".$this->size();
     }
