@@ -1,5 +1,5 @@
 # 数据结构
-数据结构是指相互之间存在一种或多种特定关系的数据元素的集合，是计算机用来存储和组织数据的方式。数据元素都不是孤立存在的,而是在它们之间存在着某种关系,这种数据元素相互之间的关系称为结构.
+数据结构是指相互之间存在一种或多种特定关系的数据元素的集合，是计算机用来存储和组织数据的方式。数据元素都不是孤立存在的，而是在它们之间存在着某种关系，这种数据元素相互之间的关系称为结构。
 
 ## 数据结构分类
 根据数据元素间关系的不同特性，将数据结构常分为下列四类基本的结构：
@@ -69,22 +69,22 @@
 
 ### 线性结构
 
-- [线性表](./)
-    - [顺序表](./)
-    - [单向链表](./)
-    - [静态链表](./)
-    - [双向链表](./)
-    - [循环链表](./)
-- [栈](./02-Stack/README.md)
-    - [顺序栈](./)
-    - [链栈](./)
-- [队列](./03-Queue/README.md)
-    - [循环队列](./03-Queue/README.md)
-    - [链队列](./03-Queue/README.md)
-- [串](./03-Queue/README.md)
-    - [定长顺序存储](./03-Queue/README.md)
-    - [堆分配存储](./03-Queue/README.md)
-- [数组](./03-Queue/README.md)
+- [数组](./Array/README.md)
+- [线性表](./LinearList/README.md)
+    - [顺序表](./LinearList/SequenceList.md)
+    - [单向链表](./LinearList/SinglyLinkedList.md)
+    - [静态链表](./LinearList/StaticLinkedList.md)
+    - [双向链表](./LinearList/DoublyLinkedList.md)
+    - [循环链表](./LinearList/LoopLinkedList.md)
+- [栈](./Stack/README.md)
+    - [顺序栈](./Stack/SequenceStack.md)
+    - [链栈](./Stack/LinkedStack.md)
+- [队列](./Queue/README.md)
+    - [循环队列](./Queue/LoopQueue.md)
+    - [链队列](./Queue/LinkedQueue.md)
+- [串](./String/README.md)
+    - [定长顺序存储](./String/SequenceString.md)
+    - [堆分配存储](./String/HeapString.md)
 
 ### 树结构
 
