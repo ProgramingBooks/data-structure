@@ -3,5 +3,9 @@
 
 双向链表的结点中有两个指针域,其一指向直接后继, 另一个指向直接前趋.
 
+![doubly_linked_list1](../images/doubly_linked_list1.png)
+
+
+
 ![doubly_linked_list](../images/doubly_linked_list.png)
 
