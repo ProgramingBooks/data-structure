@@ -3,11 +3,11 @@
 
 单链表和双链表都也都有有循环表
 
-## 空单向循环链表
+## 空的单向循环链表
 
 ![empty_singly_loop_linked_list](../images/empty_singly_loop_linked_list.png)
 
-## 空双向循环链表
+## 空的双向循环链表
 
 ![empty_doubly_loop_linked_list](../images/empty_doubly_loop_linked_list.png)
 
