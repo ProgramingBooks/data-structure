@@ -14,12 +14,12 @@
 我们把学生表里每一行记录作为线性表的一个数据元素，而每一行记录由 姓名，年龄，性别，身高，体重这些数据项组成。
 
 
-## 线性表的实现
+## 线性表的存储结构
 
-### 1. 线性表的顺序实现
+### 1. 线性表的顺序存储
 - [顺序表](SequenceList.md)
 
-### 2. 线性表的链式实现
+### 2. 线性表的链式存储
 - [单向链表](./LinearList/SinglyLinkedList.md)
 - [双向链表](./LinearList/DoublyLinkedList.md)
 - [循环链表](./LinearList/LoopLinkedList.md)
