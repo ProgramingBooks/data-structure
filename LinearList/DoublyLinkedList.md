@@ -5,7 +5,8 @@
 
 ![doubly_linked_list1](../images/doubly_linked_list1.png)
 
-
+在双向链表表的第一个结点之前附设一个**头结点**, 头结点的前指针域指向第一个结点的前趋
 
 ![doubly_linked_list](../images/doubly_linked_list.png)
 
+[详见代码实现]
