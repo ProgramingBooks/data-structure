@@ -169,7 +169,7 @@ class SequenceList {
             }
             $printStr = $printStr.$item.",";
         }
-        ltrim($printStr, ",");
+        $printStr = rtrim($printStr, ",");
         $printStr .= "]";
         echo $printStr."\r\n";
     }
