@@ -3,46 +3,25 @@
  * 单向链表的基本操作实现
  * @author: phachon@163.com
  */
-
-class Node {
-
-    /**
-     * 结点数据
-     * @var string
-     */
-    public $data = "";
-
-    /**
-     * 结点指针，指向下一个结点
-     * @var string
-     */
-    public $next = NULL;
-
-    /**
-     * Node constructor.
-     * @param $data
-     * @param $next
-     */
-    public function __construct($data, $next) {
-        $this->data = $data;
-        $this->next = $next;
-    }
-}
-
-
 class SinglyLinkedList {
 
     /**
      * 头结点
-     * @var Node|null
+     * @var null
      */
     private $_headerNode = NULL;
+
+	/**
+	 * 链表长度
+	 * @var int
+	 */
+    private $_length = 0;
 
     /**
      * SinglyLinkedList constructor.
      */
     public function __construct() {
-        $this->_headerNode = new Node("", NULL);
+        $this->_headerNode = new SinglyNode();
     }
 
     /**
@@ -58,13 +37,7 @@ class SinglyLinkedList {
      * @return int
      */
     public function length() {
-        $i = 0;
-        $current = $this->_headerNode;
-        while ($current->next != NULL) {
-            $i++;
-            $current = $current->next;
-        }
-        return $i;
+        return $this->_length;
     }
 
     /**
@@ -72,12 +45,13 @@ class SinglyLinkedList {
      * @param $data
      */
     public function addNode($data) {
-        $node = new Node($data, NULL);
+        $node = new SinglyNode($data);
         $current = $this->_headerNode;
         while($current->next != NULL) {
             $current = $current->next;
         }
         $current->next = $node;
+        $this->_length += 1;
     }
 
     /**
@@ -85,8 +59,10 @@ class SinglyLinkedList {
      * @param $data
      */
     public function addFirstNode($data) {
-        $node = new Node($data, $this->_headerNode->next);
+        $node = new SinglyNode($data);
+        $node->next = $this->_headerNode->next;
         $this->_headerNode->next = $node;
+	    $this->_length += 1;
     }
 
     /**
@@ -96,7 +72,7 @@ class SinglyLinkedList {
      * @throws Exception
      */
     public function addIndexNode($index, $data) {
-        if ($index <= 0 || $index > $this->length()) {
+        if ($index <= 0 || $index > $this->_length) {
             throw new Exception("Add index node failed, index is error!");
         }
         // 查找 index 的前置结点
@@ -104,8 +80,10 @@ class SinglyLinkedList {
         for ($i = 0; $i < $index - 1; $i++) {
             $indexPrevNode = $indexPrevNode->next;
         }
-        $node = new Node($data, $indexPrevNode->next);
+        $node = new SinglyNode($data);
+        $node->next = $indexPrevNode->next;
         $indexPrevNode->next = $node;
+	    $this->_length += 1;
     }
 
     /**
@@ -114,7 +92,7 @@ class SinglyLinkedList {
      * @throws Exception
      */
     public function delIndexNode($index) {
-        if ($index <= 0 || $index > $this->length()) {
+        if ($index <= 0 || $index > $this->_length) {
             throw new Exception("Del node failed, index is error!");
         }
         // 查找 index 的前置结点
@@ -123,6 +101,7 @@ class SinglyLinkedList {
             $indexPrevNode = $indexPrevNode->next;
         }
         $indexPrevNode->next = $indexPrevNode->next->next;
+	    $this->_length -= 1;
     }
 
     /**
@@ -132,7 +111,7 @@ class SinglyLinkedList {
      * @throws Exception
      */
     public function get($index) {
-        if ($index <= 0 || $index > $this->length()) {
+        if ($index <= 0 || $index > $this->_length) {
             throw new Exception("Get node failed, index is error!");
         }
         // 查找第 index 个结点
@@ -150,8 +129,8 @@ class SinglyLinkedList {
      * @throws Exception
      */
     public function set($index, $data) {
-        if ($index <= 0 || $index > $this->length()) {
-            throw new Exception("Del node failed, index is error!");
+        if ($index <= 0 || $index > $this->_length) {
+            throw new Exception("Sel node failed, index is error!");
         }
         // 查找第 index 个结点
         $indexNode = $this->_headerNode;

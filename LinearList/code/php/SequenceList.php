@@ -23,7 +23,6 @@ class SequenceList {
      */
     private $_num = 0;
 
-
     /**
      * 数据元素
      * @var array
