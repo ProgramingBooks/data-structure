@@ -85,7 +85,7 @@ class DoublyLinkedList_Test {
     /**
      * 在第 index 位置添加新结点
      */
-    public function addPrevNode_test() {
+    public function addIndexNode_test() {
         $doublyList = DoublyLinkedList::create();
         $doublyList->addNode("a");
         $doublyList->addNode("b");

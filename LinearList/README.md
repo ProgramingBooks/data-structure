@@ -20,6 +20,6 @@
 - [顺序表](SequenceList.md)
 
 ### 2. 线性表的链式存储
-- [单向链表](./LinearList/SinglyLinkedList.md)
-- [双向链表](./LinearList/DoublyLinkedList.md)
-- [循环链表](./LinearList/LoopLinkedList.md)
+- [单向链表](SinglyLinkedList.md)
+- [双向链表](DoublyLinkedList.md)
+- [循环链表](LoopLinkedList.md)

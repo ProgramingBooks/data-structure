@@ -177,4 +177,11 @@ class SinglyLinkedList {
         $printStr .= "]";
         echo $printStr."\r\n";
     }
+
+    /**
+     * 清空链表
+     */
+    public function clear() {
+        $this->_headerNode = NULL;
+    }
 }

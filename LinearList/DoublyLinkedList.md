@@ -9,4 +9,4 @@
 
 ![doubly_linked_list](../images/doubly_linked_list.png)
 
-[详见代码实现]
+[详见代码实现](./code)
