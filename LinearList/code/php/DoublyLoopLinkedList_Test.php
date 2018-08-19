@@ -1,22 +1,22 @@
 <?php
 /**
- * 单向链表测试
+ * 双向链表测试
  * @author: phachon@163.com
  */
 
-require_once 'SinglyLinkedList.php';
-require_once 'SinglyNode.php';
+require_once 'DoublyLoopLinkedList.php';
+require_once 'DoublyNode.php';
 // run test
-SinglyLinkedList_Test::run();
+DoublyLoopLinkedList_Test::run();
 
-class SinglyLinkedList_Test {
+class DoublyLoopLinkedList_Test {
 
     /**
      * 运行测试
      */
     public static function run() {
         try {
-            $instance = new ReflectionClass("SinglyLinkedList_Test");
+            $instance = new ReflectionClass("DoublyLoopLinkedList_Test");
         }catch (Exception $e) {
             exit($e->getMessage());
         }
@@ -39,7 +39,7 @@ class SinglyLinkedList_Test {
      * 创建一个空链表
      */
     public function create_test() {
-        SinglyLinkedList::create();
+        DoublyLoopLinkedList::create();
         $this->_success();
     }
 
@@ -47,11 +47,11 @@ class SinglyLinkedList_Test {
      * 添加结点
      */
     public function addNode_test() {
-        $singlyList = SinglyLinkedList::create();
-        $singlyList->addNode("a");
-        $singlyList->addNode("b");
-        $singlyList->addNode("c");
-        $singlyList->printlnList();
+        $doublyLoopList = DoublyLoopLinkedList::create();
+	    $doublyLoopList->addNode("a");
+	    $doublyLoopList->addNode("b");
+	    $doublyLoopList->addNode("c");
+	    $doublyLoopList->printlnList();
         $this->_success();
     }
 
@@ -59,11 +59,11 @@ class SinglyLinkedList_Test {
      * 获取链表的长度
      */
     public function length_test() {
-        $singlyList = SinglyLinkedList::create();
-        $singlyList->addNode("a");
-        $singlyList->addNode("b");
-        $singlyList->addNode("c");
-        if ($singlyList->length() == 3) {
+        $doublyLoopList = DoublyLoopLinkedList::create();
+        $doublyLoopList->addNode("a");
+        $doublyLoopList->addNode("b");
+        $doublyLoopList->addNode("c");
+        if ($doublyLoopList->length() == 3) {
             $this->_success();
         }else {
             $this->_error();
@@ -74,11 +74,11 @@ class SinglyLinkedList_Test {
      * 链表头部添加结点
      */
     public function addFirstNode_test() {
-        $singlyList = SinglyLinkedList::create();
-        $singlyList->addFirstNode("a");
-        $singlyList->addFirstNode("b");
-        $singlyList->addFirstNode("c");
-        $singlyList->printlnList();
+        $doublyLoopList = DoublyLoopLinkedList::create();
+        $doublyLoopList->addFirstNode("a");
+        $doublyLoopList->addFirstNode("b");
+        $doublyLoopList->addFirstNode("c");
+        $doublyLoopList->printlnList();
         $this->_success();
     }
 
@@ -86,13 +86,13 @@ class SinglyLinkedList_Test {
      * 在第 index 位置添加新结点
      */
     public function addIndexNode_test() {
-        $singlyList = SinglyLinkedList::create();
-        $singlyList->addNode("a");
-        $singlyList->addNode("b");
-        $singlyList->addNode("c");
-        $singlyList->printlnList();
-        $singlyList->addIndexNode(2, "d");
-        $singlyList->printlnList();
+        $doublyLoopList = DoublyLoopLinkedList::create();
+        $doublyLoopList->addNode("a");
+        $doublyLoopList->addNode("b");
+        $doublyLoopList->addNode("c");
+        $doublyLoopList->printlnList();
+        $doublyLoopList->addIndexNode(2, "d");
+        $doublyLoopList->printlnList();
         $this->_success();
     }
 
@@ -100,13 +100,13 @@ class SinglyLinkedList_Test {
      * 删除第 index 个结点
      */
     public function delNode_test() {
-        $singlyList = SinglyLinkedList::create();
-        $singlyList->addNode("a");
-        $singlyList->addNode("b");
-        $singlyList->addNode("c");
-        $singlyList->printlnList();
-        $singlyList->delIndexNode(2);
-        $singlyList->printlnList();
+        $doublyLoopList = DoublyLoopLinkedList::create();
+        $doublyLoopList->addNode("a");
+        $doublyLoopList->addNode("b");
+        $doublyLoopList->addNode("c");
+        $doublyLoopList->printlnList();
+        $doublyLoopList->delIndexNode(2);
+        $doublyLoopList->printlnList();
         $this->_success();
     }
 
@@ -114,12 +114,12 @@ class SinglyLinkedList_Test {
      * 获取第 index 个结点
      */
     public function get_test() {
-        $singlyList = SinglyLinkedList::create();
-        $singlyList->addNode("a");
-        $singlyList->addNode("b");
-        $singlyList->addNode("c");
-        $singlyList->printlnList();
-        if ($singlyList->get(2) == "b") {
+        $doublyLoopList = DoublyLoopLinkedList::create();
+        $doublyLoopList->addNode("a");
+        $doublyLoopList->addNode("b");
+        $doublyLoopList->addNode("c");
+        $doublyLoopList->printlnList();
+        if ($doublyLoopList->get(2) == "b") {
             $this->_success();
         }else {
             $this->_error();
@@ -130,13 +130,13 @@ class SinglyLinkedList_Test {
      * 修改第 index 个结点
      */
     public function set_test() {
-        $singlyList = SinglyLinkedList::create();
-        $singlyList->addNode("a");
-        $singlyList->addNode("b");
-        $singlyList->addNode("c");
-        $singlyList->printlnList();
-        $singlyList->set(2, "d");
-        if ($singlyList->get(2) == "d") {
+        $doublyLoopList = DoublyLoopLinkedList::create();
+        $doublyLoopList->addNode("a");
+        $doublyLoopList->addNode("b");
+        $doublyLoopList->addNode("c");
+        $doublyLoopList->printlnList();
+        $doublyLoopList->set(2, "d");
+        if ($doublyLoopList->get(2) == "d") {
             $this->_success();
         }else {
             $this->_error();
@@ -147,8 +147,8 @@ class SinglyLinkedList_Test {
      * 链表是否为空
      */
     public function isEmpty_test() {
-        $singlyList = SinglyLinkedList::create();
-        if ($singlyList->isEmpty()) {
+        $doublyLoopList = DoublyLoopLinkedList::create();
+        if ($doublyLoopList->isEmpty()) {
             $this->_success();
         }else {
             $this->_error();
@@ -159,11 +159,11 @@ class SinglyLinkedList_Test {
      * 元素是否存在
      */
     public function isExist_test() {
-        $singlyList = SinglyLinkedList::create();
-        $singlyList->addNode("a");
-        $singlyList->addNode("b");
-        $singlyList->addNode("c");
-        if ($singlyList->isExist("c")) {
+        $doublyLoopList = DoublyLoopLinkedList::create();
+        $doublyLoopList->addNode("a");
+        $doublyLoopList->addNode("b");
+        $doublyLoopList->addNode("c");
+        if ($doublyLoopList->isExist("c")) {
             $this->_success();
         }else {
             $this->_error();

@@ -1,10 +1,10 @@
 <?php
 /**
- * 双向链表的基本操作实现
+ * 双向循环链表的基本操作实现
  * @author: phachon@163.com
  */
 
-class DoublyLinkedList {
+class DoublyLoopLinkedList {
 
 	/**
 	 * 头结点
@@ -23,11 +23,13 @@ class DoublyLinkedList {
 	 */
 	public function __construct() {
 		$this->_headerNode = new DoublyNode();
+		$this->_headerNode->next = $this->_headerNode;
+		$this->_headerNode->prev = $this->_headerNode;
 	}
 
 	/**
 	 * 创建一个空的双向链表
-	 * @return DoublyLinkedList
+	 * @return DoublyLoopLinkedList
 	 */
 	public static function create() {
 		return new self();
@@ -48,11 +50,13 @@ class DoublyLinkedList {
 	public function addNode($data) {
 		$node = new DoublyNode($data);
 		$current = $this->_headerNode;
-		while($current->next != NULL) {
+		while($current->next != $this->_headerNode) {
 			$current = $current->next;
 		}
 		$current->next = $node;
 		$node->prev = $current;
+		$node->next = $this->_headerNode;
+		$this->_headerNode->prev = $node;
 		$this->_length += 1;
 	}
 
@@ -62,8 +66,8 @@ class DoublyLinkedList {
 	 */
 	public function addFirstNode($data) {
 		$node = new DoublyNode($data);
-		$node->next = $this->_headerNode->next;
 		$node->prev = $this->_headerNode;
+		$node->next = $this->_headerNode->next;
 		$this->_headerNode->next = $node;
 		$this->_length += 1;
 	}
@@ -106,7 +110,7 @@ class DoublyLinkedList {
 		}
 		$indexNode = $indexPrevNode->next;
 		$indexNextNode = $indexNode->next;
-		if ($indexNextNode != NULL) {
+		if ($indexNextNode != $this->_headerNode) {
 			$indexNextNode->prev = $indexPrevNode;
 		}
 		$indexPrevNode->next = $indexNextNode;
@@ -153,7 +157,7 @@ class DoublyLinkedList {
 	 * 链表是否为空
 	 */
 	public function isEmpty() {
-		return $this->_headerNode->next == NULL;
+		return $this->_headerNode->next == $this->_headerNode;
 	}
 
 	/**
@@ -163,7 +167,7 @@ class DoublyLinkedList {
 	 */
 	public function isExist($data) {
 		$current = $this->_headerNode->next;
-		while($current != NULL) {
+		while($current != $this->_headerNode) {
 			if ($current->data == $data) {
 				return true;
 			}
@@ -178,7 +182,7 @@ class DoublyLinkedList {
 	public function printlnList() {
 		$printStr = "[";
 		$current = $this->_headerNode->next;
-		while ($current != NULL) {
+		while ($current != $this->_headerNode) {
 			$printStr = $printStr.$current->data.",";
 			$current = $current->next;
 		}
