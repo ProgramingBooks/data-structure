@@ -106,9 +106,12 @@ class SequenceStack {
 
 	/**
 	 * 从栈底到栈顶遍历栈元素
+	 * @param $funcName
 	 */
-	public function visit() {
-
+	public function visit($funcName) {
+		for ($i = $this->_base; $i < $this->_top; $i++) {
+			$funcName($this->_data[$i]);
+		}
 	}
 
 	/**

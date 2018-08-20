@@ -124,6 +124,22 @@ class SequenceStack_Test {
 	}
 
 	/**
+	 * 从栈底到栈顶遍历栈元素
+	 */
+	public function visit_test() {
+		$sequenceStack = SequenceStack::create();
+		$sequenceStack->push("a");
+		$sequenceStack->push("b");
+		$sequenceStack->push("c");
+		$sequenceStack->push("d");
+		$sequenceStack->push("e");
+		$sequenceStack->visit(function (&$item){
+			$item = $item."1";
+		});
+		echo $sequenceStack->printStr();
+	}
+
+	/**
 	 * test success
 	 */
 	private function _success() {
