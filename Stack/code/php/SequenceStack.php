@@ -115,7 +115,7 @@ class SequenceStack {
 	}
 
 	/**
-	 * 打印输出
+	 * 从栈底到栈顶遍历栈元素打印输出
 	 */
 	public function printStr() {
 		$printStr = "[";

@@ -1,15 +1,9 @@
 <?php
 /**
- * 链栈的基本操作(单向链表实现)
+ * 链栈的基本操作(基于单向链表)
  * @author phachon@163.com
  */
 class LinkedStack {
-
-	/**
-	 * 头结点
-	 * @var null
-	 */
-	private $_headerNode = NULL;
 
 	/**
 	 * 栈底指针
@@ -18,7 +12,7 @@ class LinkedStack {
 	private $_base = NULL;
 
 	/**
-	 * 栈顶指针
+	 * 栈顶指针，也就是第一个结点。
 	 * @var null
 	 */
 	private $_top = NULL;
@@ -34,7 +28,7 @@ class LinkedStack {
 	 */
 	public function __construct() {
 		$this->_length = 0;
-		$this->_headerNode = new SinglyNode();
+		$this->_top = NULL;
 	}
 
 	/**
@@ -49,21 +43,36 @@ class LinkedStack {
 	 * 销毁一个栈
 	 */
 	public function destroy() {
-
+		while ($this->_top != NULL) {
+			$next = $this->_top->next;
+			unset($this->_top);
+			$this->_top = $next;
+		}
+		$this->_base = NULL;
+		$this->_length = 0;
 	}
 
 	/**
 	 * 清空一个栈
 	 */
-	public function clear(){
+	public function clear() {
+		$current = $this->_top;
+		while ($current != NULL) {
+			$next = $current->next;
+			unset($current);
+			$current = $next;
+		}
 
+		$this->_top = NULL;
+		$this->_base = NULL;
+		$this->_length = 0;
 	}
 
 	/**
 	 * 是否是空栈
 	 */
 	public function isEmpty() {
-
+		return $this->_top == NULL;
 	}
 
 	/**
@@ -77,7 +86,10 @@ class LinkedStack {
 	 * 获取栈顶元素
 	 */
 	public function getTop() {
-
+		if ($this->_top != NULL) {
+			return $this->_top->data;
+		}
+		return "";
 	}
 
 	/**
@@ -89,27 +101,50 @@ class LinkedStack {
 		$node->next = $this->_top;
 		$this->_top = $node;
 		$this->_length++;
+		if ($this->_base == NULL) {
+			$this->_base = $this->_top;
+		}
 	}
 
 	/**
 	 * 删除栈顶元素,并返回元素值
 	 */
 	public function pop() {
-
+		if ($this->_top != NULL) {
+			$data = $this->_top->data;
+			$next = $this->_top->next;
+			unset($this->_top);
+			$this->_top = $next;
+			$this->_length--;
+			return $data;
+		}
+		return "";
 	}
 
 	/**
-	 * 从栈底到栈顶遍历栈元素
+	 * 从栈顶到栈底遍历栈元素
 	 * @param $funcName
 	 */
 	public function visit($funcName) {
-
+		$current = $this->_top;
+		while ($current != NULL) {
+			$funcName($current);
+			$current = $current->next;
+		}
 	}
 
 	/**
-	 * 打印输出
+	 * 从栈顶到栈底的元素打印输出
 	 */
 	public function printStr() {
-
+		$printStr = "[";
+		$current = $this->_top;
+		while ($current != NULL) {
+			$printStr = $printStr.$current->data.",";
+			$current = $current->next;
+		}
+		$printStr = rtrim($printStr, ",");
+		$printStr .= "]";
+		return $printStr;
 	}
 }
