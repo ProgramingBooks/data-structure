@@ -10,7 +10,7 @@
 
 ## 循环队列
 
-![loop_queue](../images/loop_queque.png)
+![loop_queue](../images/loop_queue.png)
 
 
 [队列的顺序表示](./)
