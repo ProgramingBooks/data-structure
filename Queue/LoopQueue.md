@@ -13,4 +13,4 @@
 ![loop_queue](../images/loop_queue.png)
 
 
-[队列的顺序表示](./)
+[详见代码实现](./code)
