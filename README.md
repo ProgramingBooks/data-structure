@@ -91,6 +91,7 @@
 - [串](./String/README.md)
     - [定长顺序存储](./String/SequenceString.md)
     - [堆分配存储](./String/HeapString.md)
+    - [块链存储](./LinkedString.md)
 
 ### 树结构
 
