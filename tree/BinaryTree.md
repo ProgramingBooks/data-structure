@@ -14,7 +14,8 @@
 用一组地址连续的存储单元依次自上而下.自左至右存储完全二叉树的结点元素,这种顺序存储结构仅适用于完全二叉树
 
 ![binary_tree_seq](../images/tree_seq.jpg)
-![binary_tree_seq](../images/seq_tree_1.png.png)
+
+![binary_tree_seq1](../images/seq_tree_1.png.png)
 
 ### 链式存储结构
 
