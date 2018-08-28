@@ -15,7 +15,7 @@
 
 ![binary_tree_seq](../images/tree_seq.jpg)
 
-![binary_tree_seq1](../images/seq_tree_1.png.png)
+![binary_tree_seq1](../images/seq_tree_1.png)
 
 ### 链式存储结构
 
