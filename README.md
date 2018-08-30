@@ -96,9 +96,8 @@
 ### 树结构
 
 - [树](./tree/README.md)
-
 - [二叉树](./tree/BinaryTree.md)
-    - [遍历二叉树]
+    - [遍历二叉树](./tree/TraverBinaryTree.md)
 - [森林]
 - [赫夫曼树]
     
