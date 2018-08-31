@@ -97,7 +97,10 @@
 
 - [树](./tree/README.md)
 - [二叉树](./tree/BinaryTree.md)
-    - [遍历二叉树](./tree/TraverBinaryTree.md)
+    - [二叉树遍历](./tree/TraverBinaryTree.md)
+    - [二叉查找树](./tree/BinarySearchTree.md)
+    - [平衡二叉树](./tree/AVLBinaryTree.md)
+    - [红黑二叉树](./tree/RedBlackBinaryTree.md)
 - [森林]
 - [赫夫曼树]
     
