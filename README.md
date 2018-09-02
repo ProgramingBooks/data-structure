@@ -95,15 +95,15 @@
 
 ### 树结构
 
-- [树](./tree/README.md)
-- [二叉树](./tree/BinaryTree.md)
-    - [二叉树遍历](./tree/TraverBinaryTree.md)
-    - [二叉查找树](./tree/BinarySearchTree.md)
-    - [平衡二叉树](./tree/AVLBinaryTree.md)
-        - [平衡树之2-3树](./tree/AVLBinaryTree23.md)
-        - [平衡二叉树之红黑树](./tree/RedBlackBinaryTree.md)
-        - [平衡树之B树](./tree/BinaryTreeB.md)
-    - [红黑二叉树](./tree/RedBlackBinaryTree.md)
+- [树](./Tree/README.md)
+- [二叉树](./Tree/BinaryTree.md)
+    - [二叉树遍历](./Tree/TraverBinaryTree.md)
+    - [二叉查找树](./Tree/BinarySearchTree.md)
+    - [平衡二叉树](./Tree/AVLBinaryTree.md)
+        - [平衡树之2-3树](./Tree/AVLBinaryTree23.md)
+        - [平衡二叉树之红黑树](./Tree/RedBlackBinaryTree.md)
+        - [平衡树之B树](./Tree/BinaryTreeB.md)
+    - [红黑二叉树](./Tree/RedBlackBinaryTree.md)
 - [森林]
 - [赫夫曼树]
     
