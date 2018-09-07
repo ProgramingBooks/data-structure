@@ -33,14 +33,12 @@ class BinarySearchTree {
 			return;
 		}
 
-		// 不允许有相同的结点
-		if ($this->search($value) != NULL) {
-			throw new Exception("Insert failed, node is exists!");
-		}
-
 		$binaryNode = new BinaryTreeNode($value);
 		$current = $this->_root;
 		while($current != NULL) {
+			if ($value == $current->value) {
+				throw new Exception("Insert failed, node is exists!");
+			}
 			if ($value > $current->value) {
 				if ($current->right == NULL) {
 					$binaryNode->parent = $current;
@@ -49,7 +47,8 @@ class BinarySearchTree {
 				}else {
 					$current = $current->right;
 				}
-			}else {
+			}
+			if ($value < $current->value){
 				if ($current->left == NULL) {
 					$binaryNode->parent = $current;
 					$current->left = $binaryNode;
