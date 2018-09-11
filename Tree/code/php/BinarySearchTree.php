@@ -84,8 +84,8 @@ class BinarySearchTree {
 	 * @param $value
 	 * @throws Exception
 	 */
-	public function set($value) {
-		$node = $this->search($value);
+	public function set($key, $value) {
+		$node = $this->search($key);
 		if ($node == NULL) {
 			throw new Exception("Set failed, node is not exists!");
 		}
@@ -159,6 +159,9 @@ class BinarySearchTree {
 	public function max() {
 		$current = $this->_root;
 		while ($current != NULL) {
+		    if ($current->right == NULL) {
+		        break;
+		    }
 			$current = $current->right;
 		}
 		return $current->value;
@@ -170,6 +173,9 @@ class BinarySearchTree {
 	public function min() {
 		$current = $this->_root;
 		while ($current != NULL) {
+		    if ($current->left == NULL) {
+                break;
+            }
 			$current = $current->left;
 		}
 		return $current->value;
