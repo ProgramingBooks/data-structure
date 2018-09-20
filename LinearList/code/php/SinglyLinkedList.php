@@ -178,6 +178,56 @@ class SinglyLinkedList {
         echo $printStr."\r\n";
     }
 
+	/**
+	 * 逆序
+	 * [h]->[1]->[2]->[3]
+	 */
+	public function reverse() {
+		if ($this->_headerNode == NULL || $this->_headerNode->next == NULL) {
+			return NULL;
+		}
+		$pre = $this->_headerNode;
+		$current = $this->_headerNode->next;
+		while ($current != NULL) {
+			$next = $current->next;
+			$current->next = $pre;
+			$pre = $current;
+			$current = $next;
+		}
+		// 头结点下一个结点的指针必须置为空
+		$this->_headerNode->next->next = NULL;
+		$this->_headerNode->next = $pre;
+	}
+
+	/**
+	 * 逆序递归实现
+	 */
+	public function reverse2() {
+		if ($this->_headerNode == NULL || $this->_headerNode->next == NULL) {
+			return NULL;
+		}
+
+		$this->_headerNode = $this->_reverse($this->_headerNode);
+	}
+
+	/**
+	 * 递归实现
+	 * [h]->[1]->[2]->[3]
+	 * @param $node
+	 * @return mixed
+	 */
+	public function _reverse($node) {
+		if ($node == NULL || $node->next == NULL) {
+			return $node;
+		}
+
+		$headNode = $this->_reverse($node->next);
+
+		$node->next->next = $node;
+		$node->next = NULL;
+		return $headNode;
+	}
+
     /**
      * 清空链表
      */

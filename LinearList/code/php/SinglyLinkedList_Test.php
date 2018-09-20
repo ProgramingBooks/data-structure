@@ -170,6 +170,43 @@ class SinglyLinkedList_Test {
         }
     }
 
+	/**
+	 * 逆序
+	 */
+	public function reverse_test() {
+		$singlyList = SinglyLinkedList::create();
+		$singlyList->addNode("a");
+		$singlyList->addNode("iio");
+		$singlyList->addNode("c");
+		$singlyList->addNode("ad");
+		$singlyList->addNode("989");
+		$singlyList->addNode("445");
+		$singlyList->addNode("aoo");
+		$singlyList->addNode("ne");
+		$singlyList->addNode("iiu");
+		$singlyList->addNode("90");
+		$singlyList->addNode("414");
+		$singlyList->printlnList();
+		$singlyList->reverse();
+		$singlyList->printlnList();
+		$this->_success();
+	}
+
+	/**
+	 * 逆序
+	 */
+	public function reverse2_test() {
+		$singlyList = SinglyLinkedList::create();
+		$singlyList->addNode("a");
+		$singlyList->addNode("iio");
+		$singlyList->addNode("c");
+		$singlyList->addNode("ad");
+		$singlyList->printlnList();
+		$singlyList->reverse2();
+		$singlyList->printlnList();
+		$this->_success();
+	}
+
     /**
      * test success
      */
